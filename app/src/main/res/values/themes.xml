@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ダークテーマ基本。Compose 側でもダーク配色を既定にする -->
+    <style name="Theme.RootPadBridge" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#FF0E1116</item>
+        <item name="android:statusBarColor">#FF0E1116</item>
+        <item name="android:navigationBarColor">#FF0E1116</item>
+        <item name="android:colorBackground">#FF0E1116</item>
+    </style>
+</resources>

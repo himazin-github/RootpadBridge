@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RootPad Bridge</string>
+
+    <string name="notification_channel_name">Input conversion service</string>
+    <string name="notification_channel_desc">Shows the running state of input conversion</string>
+    <string name="notification_title">Input conversion running</string>
+    <string name="notification_text">Keyboard / mouse → gamepad</string>
+    <string name="notification_action_stop">Stop</string>
+
+    <string name="service_channel_description">Shows the running state of RootPad Bridge</string>
+</resources>
