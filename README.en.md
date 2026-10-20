@@ -98,6 +98,19 @@ PC-style controls to games that do not support keyboard and mouse.
 All of these require root (uid 0), so **Shizuku cannot substitute for it**
 (Shizuku only grants shell / uid 2000).
 
+### Tested configuration (by the author)
+
+| Role | Hardware |
+|---|---|
+| Device | Lenovo **Xiaoxin Pad Pro 2025** (12.7", 8GB / 128GB) |
+| OS | Android **15** (Global ROM) |
+| Root | Magisk |
+| Keyboard | **Magicforce 49 key** (compact 49-key layout) |
+| Mouse | **Logitech G102** |
+
+> Other devices, keyboards and mice are not guaranteed to work.
+> If all four items on the Diagnostics screen show OK, it will likely work elsewhere too.
+
 ---
 
 ## Features
@@ -344,12 +357,13 @@ See [Known limitations](#known-limitations).
 | Kotlin / C compilation | ✅ Verified (`assembleDebug` succeeds) |
 | APK build with bundled `assets/rootpad_d` | ✅ Verified (ELF confirmed) |
 | 58 unit tests | ✅ All passing |
-| On-device (Magisk root, Android 15) | ✅ Verified |
+| On-device (Xiaoxin Pad Pro 2025 / Android 15 Global / Magisk) | ✅ Verified |
 | Android recognizes the virtual pad (GAMEPAD + JOYSTICK) | ✅ Verified (`/dev/input/event15`) |
 | Japanese / English UI, switching and persistence | ✅ Verified |
 | Existing profiles preserved after language change | ✅ Verified |
 
-Confirmed on a real device:
+Confirmed on a real device
+(Xiaoxin Pad Pro 2025 / Android 15 Global / Magisk, Magicforce 49 key + G102):
 
 - `su` is available and the daemon starts as root
 - The virtual pad is created and Android classifies it as **GAMEPAD + JOYSTICK**
@@ -360,6 +374,7 @@ Confirmed on a real device:
 - Mouse wheel bindings are saved and reloaded
 - Legacy (string) profiles migrate correctly to the new (array) format
 - Switching the language does not change existing profiles or key bindings
+- Every Magicforce 49 key press and the G102 movement, wheel and buttons convert correctly
 
 Device-dependent items that may not work everywhere:
 

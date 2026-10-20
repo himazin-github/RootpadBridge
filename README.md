@@ -99,6 +99,19 @@ RootPad Bridge は、root 権限 (Magisk) を持つ Android 端末で
 これらはすべて root (uid 0) 権限を要求するため、**Shizuku では代替できません**
 (Shizuku が付与するのは shell / uid 2000 権限のみ)。
 
+### 作者が動作確認した構成
+
+| 役割 | 機材 |
+|---|---|
+| 端末 | Lenovo **Xiaoxin Pad Pro 2025** (12.7インチ, 8GB / 128GB) |
+| OS | Android **15** (Global ROM) |
+| Root | Magisk |
+| キーボード | **Magicforce 49 key** (49キー・コンパクト配列) |
+| マウス | **Logitech G102** |
+
+> これ以外の端末・キーボード・マウスでの動作は保証していません。
+> 診断画面の 4 項目がすべて OK になれば、他の構成でも動作する可能性があります。
+
 ---
 
 ## 主な機能
@@ -349,12 +362,13 @@ Android の InputReader が `045E:028E` をゲームパッドとして分類し�
 | Kotlin / C のコンパイル | ✅ 検証済み (`assembleDebug` 成功) |
 | APK 生成・`assets/rootpad_d` 同梱 | ✅ 検証済み (ELF を確認) |
 | 単体テスト 58 件 | ✅ 全件成功 |
-| 実機 (Magisk root 端末, Android 15) での動作 | ✅ 検証済み |
+| 実機 (Xiaoxin Pad Pro 2025 / Android 15 Global / Magisk) での動作 | ✅ 検証済み |
 | 仮想パッドの Android 認識 (GAMEPAD + JOYSTICK) | ✅ 検証済み (`/dev/input/event15`) |
 | 日本語 / 英語 UI・言語切替・保存 | ✅ 検証済み |
 | 既存プロファイルの保持 (言語変更後も変化なし) | ✅ 検証済み |
 
-実機で確認済みの内容:
+実機で確認済みの内容
+(Xiaoxin Pad Pro 2025 / Android 15 Global / Magisk、Magicforce 49 key + G102):
 
 - `su` が利用でき、デーモンが root で起動すること
 - 仮想パッドが生成され、Android が **GAMEPAD + JOYSTICK** として認識すること
@@ -365,6 +379,7 @@ Android の InputReader が `045E:028E` をゲームパッドとして分類し�
 - マウスホイール割り当てが保存・再読込されること
 - 旧形式 (文字列) プロファイルが新形式 (配列) として正しく移行されること
 - 言語を切り替えても既存プロファイル・キー割り当てが変化しないこと
+- Magicforce 49 key の各キー入力と、G102 の移動・ホイール・ボタンが正しく変換されること
 
 端末依存で、環境によっては動作しない可能性があるもの:
 
